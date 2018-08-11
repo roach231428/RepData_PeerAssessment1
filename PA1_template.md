@@ -35,7 +35,7 @@ rawData$date = as.Date(rawData$date, "%Y-%m-%d")
 
 ```r
 dailySteps = tapply(as.numeric(rawData$steps), rawData$date, sum, na.rm = TRUE)
-hist(dailySteps)
+hist(dailySteps, breaks = 50)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -90,7 +90,7 @@ adjData$steps[is.na(adjData$steps)] = tapply(as.numeric(adjData$steps), adjData$
 
 adjDailySteps = tapply(as.numeric(adjData$steps), adjData$date, sum, na.rm = TRUE)
 ## histogram
-hist(adjDailySteps)
+hist(adjDailySteps, breaks = 50)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
